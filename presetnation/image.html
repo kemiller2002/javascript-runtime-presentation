@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <style>
+      html,
+      body {
+        justify-content: center;
+        display: flex;
+      }
+    </style>
+    <script example-code></script>
+    <script load-code>
+      (() => {
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+          get: (searchParams, prop) => searchParams.get(prop),
+        });
+        document.addEventListener("DOMContentLoaded", (e) => {
+          e.target.getElementById("image").setAttribute("src", params.src);
+        });
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div>
+      <img id="image" />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <style>
+      html,
+      body {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+      }
+
+      body > div {
+        flex: 1 1 auto;
+      }
+
+      textarea {
+        flex-grow: 5;
+      }
+    </style>
+    <script example-code>
+      function runExample() {
+        const ddl = document.getElementById("fruit");
+        const fruit = "banana,orange,apple,grape".split(",");
+
+        fruit.forEach((f) => {
+          const option = document.createElement("option");
+          option.text = f;
+          option.value = f;
+
+          ddl.add(option);
+        });
+      }
+    </script>
+  </head>
+  <body onload="runExample();">
+    <select id="fruit" value="apple"></select
+    ><button onclick="runExample()">Add options</button>
+  </body>
+</html>

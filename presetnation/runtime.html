@@ -1,0 +1,50 @@
+<html>
+  <head>
+    <style>
+      [wrapper] {
+        display: flexbox;
+        margin: 1em;
+        align-items: center;
+      }
+
+      section {
+        display: flexbox;
+        border: thin solid;
+        padding: 0.25em;
+      }
+    </style>
+  </head>
+  <body>
+    <div wrapper>
+      <section javascript-runtime>
+        <h1 section-name>JavaScript runtime</h1>
+        <section>
+          <div section-heap>
+            <div heap-diagram></div>
+            <div stack-diagram></div>
+          </div>
+        </section>
+      </section>
+      <span over-arrow></span>
+      <section web-api>
+        <h1 section-name>Web API</h1>
+        <div section-webapi>
+          <div api-diagram></div>
+          <div ajax-diagram></div>
+        </div>
+
+        <section event-loop>
+          <h1 section-name>Event Loop</h1>
+          <div event-loop-image></div>
+        </section>
+        <section callback-queue>
+          <h1 section-name>Callback Queue</h1>
+          <div section-webapi>
+            <div api-diagram></div>
+            <div ajax-diagram></div>
+          </div>
+        </section>
+      </section>
+    </div>
+  </body>
+</html>

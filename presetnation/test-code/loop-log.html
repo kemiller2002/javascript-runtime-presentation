@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <style>
+      html,
+      body {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+      }
+
+      body > div {
+        flex: 1 1 auto;
+      }
+
+      textarea {
+        flex-grow: 5;
+      }
+    </style>
+    <script example-code>
+      const counter = { counter: 100000 };
+
+      async function runExample() {
+        console.log(counter);
+
+        while (counter.counter > 0) {
+          counter.counter--;
+        }
+
+        console.log(counter);
+      }
+
+      function setCounter() {
+        runExample();
+        counter.counter = 2000;
+      }
+    </script>
+  </head>
+  <body onload="setCounter()"></body>
+</html>
