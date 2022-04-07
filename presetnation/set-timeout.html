@@ -40,18 +40,7 @@
       }
 
       function runExample() {
-        for (let ii = 0; ii < 10; ii++) {
-          const currentI = ii;
-
-          if (ii == 0) {
-            postMessageAsync("I AM AN ASYNC MESSAGE");
-          }
-          postMessage(ii);
-        }
-
-        postMessageAsync("I AM END ASYNC MESSAGE").then(() => postMessage("I HAVE BEEN RESOLVED"));
-
-        postMessage("I AM THE END(?)");
+        setTimeout(() => postMessage("This is from Set timeout"), 5000);
       }
     </script>
     <script load-code>
@@ -62,12 +51,17 @@
         ))();
     </script>
   </head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+  <script>
+    hljs.highlightAll();
+  </script>
   <body>
     <div>
       <div><button onclick="postMessage('hello world')">Print Hello World</button></div>
       <textarea id="messageDisplay"></textarea>
     </div>
     <div button-wrapper><button onclick="runExample()">Run Example</button></div>
-    <pre javascript-contents></pre>
+    <pre><code javascript-contents class="language-javascript"></code></pre>
   </body>
 </html>

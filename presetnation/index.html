@@ -19,15 +19,20 @@
       div {
         display: flex;
         flex-direction: column;
-        border: thin solid gray;
+
       }
 
       [display-box] {
         flex-grow: 1;
+        border: thin solid gray;
       }
 
       iframe {
         flex: 1 1 auto;
+      }
+
+      [link-box]{
+        padding:5px
       }
     </style>
 
@@ -41,8 +46,13 @@
     </script>
   </head>
 
-  <body>
-    <div>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+    <script>
+      hljs.highlightAll();
+    </script>
+<body>
+    <div link-box>
 
       <a href="opening.html">Opening</a>
 
@@ -53,7 +63,7 @@
       <a href="single-thread-example.html">Single Threaded</a>
       <a href="image.html?src=images/javascript-event-loop.png">Runtime</a>
       <a href="set-timeout.html">setTimeout</a>
-      <a href="set-timeout-example.html">setTimeout example</a>
+      <a href="set-timeout-example.html">setTimeout Event Loop</a>
       <a href="asyncExample.html">Async Example</a>
       <a href="async-await.html">Async Await Example</a>
 

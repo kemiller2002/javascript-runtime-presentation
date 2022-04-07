@@ -55,12 +55,17 @@
         ))();
     </script>
   </head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/default.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>
+  <script>
+    hljs.highlightAll();
+  </script>
   <body>
     <div>
       <div><button onclick="postMessage('hello world')">Print Hello World</button></div>
       <textarea id="messageDisplay"></textarea>
     </div>
     <div button-wrapper><button onclick="runExample()">Run Example</button></div>
-    <pre javascript-contents></pre>
+    <pre><code javascript-contents class="language-javascript"></code></pre>
   </body>
 </html>
