@@ -1,0 +1,33 @@
+<pre><code>        setTimeout(() => {
+            Promise.all([
+                loadDeliveryMethodPromise,
+                loadShippingMethodPromise,
+                loadCharityAddressesPromise,
+            ])
+                .then(
+                    ([
+                        deliveryResponse,
+                        shippingResponse,
+                        charityResponse,
+                    ]) => ({
+                        deliveryMethods: deliveryResponse.deliverymethods,
+                        shippingMethods: shippingResponse.shippingmethods,
+                        charity: charityResponse.charities.pages[0],
+                    })
+                )
+                .then((items) => this.setMethods(items))
+                .then(() => this.setPreviousGrantFormData())
+                .then(() => this.checkAndSetDefault())
+                .catch((error) => {
+                    this.errorHandlerService.handleError(
+                        ErrorSeverityCode.High,
+                        "Error in loadInitialData",
+                        "500",
+                        error
+                    );
+                })
+                .finally(() => (this.loading = false));
+
+            this.contactPhone =
+                this.grantFormService.grantFormEntity.deliveryOptions.contactPhone;
+        }, 0);</code></pre>
